@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon | ASW Education</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Noto+Sans+Sinhala:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+            /* Default to Chemistry Theme, can be toggled via class */
+            --accent: #059669;
+            --gradient-start: #10b981;
+            --gradient-end: #047857;
+            --glow: #d1fae5;
+        }
+
+        /* Biology Theme Variables */
+        body.biology-theme {
+            --accent: #059669;
+            --gradient-start: #10b981;
+            --gradient-end: #047857;
+            --glow: #d1fae5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans Sinhala', sans-serif;
+            color: var(--text-main);
+            background: var(--bg-primary);
+            background: radial-gradient(circle at 50% 50%, var(--glow) 0%, transparent 70%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            padding: 4rem 0;
+        }
+
+        /* Top Navigation / Logo */
+        .site-header {
+            width: 100%;
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-home {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .back-home:hover {
+            color: var(--accent);
+            transform: translateX(-4px);
+        }
+
+        /* Coming Soon Content */
+        .badge {
+            background: var(--glow);
+            color: var(--accent);
+            padding: 0.5rem 1.25rem;
+            border-radius: 999px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle-sinhala {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 500px;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Countdown or Action Box */
+        .notify-box {
+            display: flex;
+            gap: 0.75rem;
+            width: 100%;
+            max-width: 420px;
+            background: #ffffff;
+            padding: 0.5rem;
+            border-radius: 999px;
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+        }
+
+        .notify-box input {
+            flex-grow: 1;
+            border: none;
+            padding: 0.8rem 1.2rem;
+            border-radius: 999px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+            color: var(--text-main);
+        }
+
+        .notify-box input::placeholder {
+            color: #94a3b8;
+        }
+
+        .notify-btn {
+            background: var(--text-main);
+            color: #ffffff;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 999px;
+            font-weight: 800;
+            font-family: inherit;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .notify-btn:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Footer Note */
+        footer {
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid #f1f5f9;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .site-header {
+                padding: 1.2rem 5%;
+            }
+
+            .back-home {
+                font-size: 0.85rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            .badge {
+                font-size: 0.65rem;
+                padding: 0.4rem 1rem;
+                margin-bottom: 1rem;
+                letter-spacing: 1.5px;
+            }
+
+            h1 {
+                font-size: clamp(2.4rem, 12vw, 3.5rem);
+                margin-bottom: 0.8rem;
+            }
+
+            .subtitle-sinhala {
+                font-size: 0.95rem;
+                margin-bottom: 0.8rem;
+                padding: 0 0.5rem;
+            }
+
+            .description {
+                font-size: 0.85rem;
+                margin-bottom: 1.8rem;
+                padding: 0 0.5rem;
+            }
+
+            .notify-box {
+                flex-direction: column;
+                background: transparent;
+                box-shadow: none;
+                border: none;
+                gap: 0.8rem;
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .notify-box input {
+                background: #ffffff;
+                border: 1px solid #e2e8f0;
+                text-align: center;
+                padding: 0.75rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .notify-btn {
+                width: 100%;
+                padding: 0.75rem 1.2rem;
+                font-size: 0.85rem;
+            }
+
+            footer {
+                padding: 1.5rem 0;
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <a href="index.html" class="back-home">
+            <i class="fa-solid fa-arrow-left"></i> Home
+        </a>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+        
+        <h1>Coming Soon</h1>
+        
+       
+      
+    </main>
+
+   
+</body>
+</html>

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASW Education | Contact Us</title>
+    <meta name="description" content="ASW Education. ඔබට ඇති ඕනෑම ගැටලුවක් සඳහා අප හා සම්බන්ධ වන්න. අපි ඔබට සහය වීමට සූදානම්.">
+    <meta name="keywords" content="ASW Education, Contact, Contact Us, Contact Page, Contact Form, Contact Information, Contact Details, WhatsApp, Email, Support, Help, Inquiry, Feedback, Questions, Assistance, Communication, Reach Out, Get in Touch, Customer Service, Technical Support, Business Inquiries">
+    <link rel="canonical" href="https://asweducation.online/contact.html">
+    <link rel="icon" type="image/png" href="https://asweducation.online/logo.png">
+    <meta property="og:title" content="Contact Us | ASW Education">
+    <meta property="og:description" content="ASW Education. ඔබට ඇති ඕනෑම ගැටලුවක් සඳහා අප හා සම්බන්ධ වන්න. අපි ඔබට සහය වීමට සූදානම්.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://asweducation.online/contact.html">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PBFX03LKPD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PBFX03LKPD');
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact ASW Education",
+      "description": "අපගේ අධ්‍යාපනික වැඩසටහන් පිළිබඳ විමසීම්.",
+      "provider": {
+        "@type": "Organization",
+        "name": "ASW Education",
+        "email": "info.asweducation@gmail.com",
+        "telephone": "+94707763739"
+      }
+    }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+    :root {
+        --bg-primary: #ffffff;
+        --bg-secondary: #fffaf5;
+        --text-main: #1e293b;
+        --text-muted: #475569;
+        --accent: #0284c7;
+        --accent-light: #e0f2fe;
+        --border-color: #fed7aa;
+        --max-width: 900px;
+        --transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Quicksand', 'Noto Sans Sinhala', sans-serif;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        background-color: var(--bg-secondary);
+        color: var(--text-main);
+        line-height: 1.8;
+        overflow-x: hidden;
+        padding-top: 6rem;
+    }
+    .container {
+        width: 100%;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 2rem;
+        position: relative;
+        z-index: 2;
+    }
+    .section {
+        padding: 3rem 0;
+    }
+    .squircle {
+        border-radius: 2.5rem;
+    }
+    .back-btn-wrapper {
+        position: absolute;
+        top: 1.25rem;
+        left: 2rem;
+        z-index: 1000;
+    }
+    .back-home-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 2px solid #fbcfe8;
+        padding: 0.6rem 1.2rem;
+        border-radius: 50px;
+        color: var(--text-main);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.95rem;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+        transition: var(--transition);
+    }
+    .back-home-btn i {
+        color: #f43f5e;
+        transition: var(--transition);
+    }
+    .back-home-btn:hover {
+        background: #fce7f3;
+        color: #f43f5e;
+        transform: translateY(-3px) scale(1.03);
+    }
+    .back-home-btn:hover i {
+        transform: translateX(-3px);
+    }
+    .back-to-top {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 3.2rem;
+        height: 3.2rem;
+        background: var(--accent);
+        color: #ffffff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        box-shadow: 0 10px 25px rgba(2, 132, 199, 0.35);
+        transition: var(--transition);
+        z-index: 1000;
+        font-size: 1.1rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+    .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    .back-to-top:hover {
+        background: #0369a1;
+        transform: translateY(-4px) scale(1.08);
+        box-shadow: 0 15px 30px rgba(2, 132, 199, 0.45);
+    }
+    .contact-card {
+        background: var(--bg-primary);
+        border: 3px solid #fbcfe8;
+        border-radius: 2.5rem;
+        padding: 3.5rem;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04);
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 2.5rem;
+        transition: var(--transition);
+    }
+    .contact-card:hover {
+        box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.08);
+    }
+    .contact-header {
+        margin-bottom: 2.5rem;
+        text-align: center;
+        border-bottom: 2px solid #f1f5f9;
+        padding-bottom: 2rem;
+    }
+    .contact-header h1 {
+        font-size: 2.4rem;
+        font-weight: 800;
+        margin-bottom: 0.75rem;
+        color: #0284c7;
+        letter-spacing: -0.5px;
+    }
+    .contact-header h1 span {
+        color: #f43f5e;
+    }
+    .last-updated {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #ffedd5;
+        color: #c2410c;
+        padding: 0.4rem 1.2rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        border: 2px solid #fed7aa;
+    }
+    .contact-intro {
+        font-size: 1.05rem;
+        color: var(--text-muted);
+        margin-bottom: 2.5rem;
+        line-height: 1.8;
+        text-align: center;
+        font-weight: 600;
+    }
+    .contact-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+    .contact-info-card {
+        background: #e0f2fe;
+        border: 3px solid #7dd3fc;
+        border-radius: 1.5rem;
+        padding: 1.25rem 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-decoration: none;
+        color: var(--text-main);
+        transition: var(--transition);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+    .contact-info-card.email-card {
+        align-items: center;
+    }
+    .contact-info-card:hover {
+        transform: translateY(-5px) scale(1.02);
+        border-color: #0284c7;
+        background: #bae6fd;
+        box-shadow: 0 15px 30px rgba(2, 132, 199, 0.15);
+    }
+    .contact-info-card i {
+        font-size: 1.8rem;
+        color: #0284c7;
+        flex-shrink: 0;
+        background: white;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .contact-info-card div h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0.2rem;
+        color: var(--text-main);
+    }
+    .contact-info-card div p {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        word-break: break-all;
+        font-weight: 600;
+    }
+    .form-container {
+        margin-top: 0;
+    }
+    .form-group {
+        margin-bottom: 1.25rem;
+    }
+    .form-group label {
+        display: block;
+        font-size: 0.95rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--text-main);
+    }
+    .form-control {
+        width: 100%;
+        background: #fffaf5;
+        color: var(--text-main);
+        border: 2px solid #fed7aa;
+        border-radius: 1rem;
+        padding: 0.85rem 1rem;
+        font-size: 0.95rem;
+        font-weight: 600;
+        outline: none;
+        transition: var(--transition);
+    }
+    .form-control:focus {
+        border-color: #0284c7;
+        background: #ffffff;
+        box-shadow: 0 0 0 4px #e0f2fe;
+    }
+    textarea.form-control {
+        resize: vertical;
+        min-height: 130px;
+    }
+    .btn-submit {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background: #0284c7;
+        color: #ffffff;
+        border: none;
+        padding: 1rem;
+        font-size: 1.05rem;
+        font-weight: 700;
+        border-radius: 1rem;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: 0 10px 25px rgba(2, 132, 199, 0.35);
+    }
+    .btn-submit:hover {
+        background: #0369a1;
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 15px 30px rgba(2, 132, 199, 0.45);
+    }
+    footer {
+        background-color: #0f172a;
+        color: #f8fafc;
+        padding: 3rem 1.25rem 2rem 1.25rem;
+        margin-top: 4rem;
+        text-align: center;
+        border-top-left-radius: 2.5rem;
+        border-top-right-radius: 2.5rem;
+        box-shadow: 0 -20px 40px rgba(15, 23, 42, 0.15);
+    }
+    .footer-bottom {
+        font-size: 0.9rem;
+        color: #94a3b8;
+        font-weight: 600;
+    }
+    @media (max-width: 768px) {
+        body {
+            padding-top: 4.5rem;
+        }
+        .container {
+            padding: 0 0.75rem;
+        }
+        .section {
+            padding: 1.5rem 0;
+        }
+        .contact-card {
+            padding: 1.5rem 1.25rem;
+            border-radius: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-width: 2px;
+        }
+        .contact-header {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.25rem;
+        }
+        .contact-header h1 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+        .last-updated {
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            border-width: 1px;
+        }
+        .contact-intro {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        .back-btn-wrapper {
+            top: 0.75rem;
+            left: 0.75rem;
+        }
+        .back-home-btn {
+            padding: 0.4rem 0.85rem;
+            font-size: 0.85rem;
+            border-width: 1px;
+        }
+        .back-to-top {
+            bottom: 1rem;
+            right: 1rem;
+            width: 2.8rem;
+            height: 2.8rem;
+            font-size: 0.9rem;
+        }
+        .contact-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 100%;
+        }
+        .contact-info-card {
+            padding: 1.1rem;
+            gap: 0.85rem;
+            border-width: 2px;
+        }
+        .contact-info-card i {
+            font-size: 1.4rem;
+            width: 2.8rem;
+            height: 2.8rem;
+        }
+        .contact-info-card div h3 {
+            font-size: 1rem;
+        }
+        .contact-info-card div p {
+            font-size: 0.9rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+        .form-control {
+            padding: 0.75rem;
+            font-size: 0.9rem;
+            border-radius: 0.8rem;
+            border-width: 1.5px;
+        }
+        textarea.form-control {
+            min-height: 110px;
+        }
+        .btn-submit {
+            padding: 0.85rem;
+            font-size: 1rem;
+            border-radius: 0.8rem;
+        }
+        .footer {
+            padding: 2.5rem 1rem 1.5rem 1rem;
+            margin-top: 2rem;
+            border-top-left-radius: 1.5rem;
+            border-top-right-radius: 1.5rem;
+        }
+        .footer-bottom {
+            font-size: 0.8rem;
+        }
+    }
+    @media (max-width: 360px) {
+        body {
+            padding-top: 4rem;
+        }
+        .container {
+            padding: 0 0.5rem;
+        }
+        .section {
+            padding: 1rem 0;
+        }
+        .contact-card {
+            padding: 1rem 0.75rem;
+            border-radius: 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+        .contact-header {
+            margin-bottom: 1rem;
+            padding-bottom: 0.8rem;
+        }
+        .contact-header h1 {
+            font-size: 1.35rem;
+            margin-bottom: 0.3rem;
+        }
+        .last-updated {
+            padding: 0.2rem 0.6rem;
+            font-size: 0.7rem;
+        }
+        .back-btn-wrapper {
+            top: 0.5rem;
+            left: 0.5rem;
+        }
+        .back-home-btn {
+            padding: 0.3rem 0.7rem;
+            font-size: 0.75rem;
+        }
+        .back-to-top {
+            bottom: 0.75rem;
+            right: 0.75rem;
+            width: 2.4rem;
+            height: 2.4rem;
+            font-size: 0.8rem;
+        }
+        .contact-info-card {
+            padding: 0.85rem;
+            gap: 0.6rem;
+            border-radius: 1rem;
+        }
+        .contact-info-card i {
+            font-size: 1.2rem;
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 0.7rem;
+        }
+        .contact-info-card div h3 {
+            font-size: 0.85rem;
+        }
+        .contact-info-card div p {
+            font-size: 0.8rem;
+        }
+        .form-group {
+            margin-bottom: 0.85rem;
+        }
+        .form-group label {
+            font-size: 0.8rem;
+            margin-bottom: 0.2rem;
+        }
+        .form-control {
+            padding: 0.6rem 0.75rem;
+            font-size: 0.8rem;
+            border-radius: 0.6rem;
+        }
+        textarea.form-control {
+            min-height: 90px;
+        }
+        .btn-submit {
+            padding: 0.75rem;
+            font-size: 0.9rem;
+            border-radius: 0.6rem;
+        }
+        footer {
+            padding: 1.5rem 0.75rem 1rem 0.75rem;
+            margin-top: 1.5rem;
+            border-top-left-radius: 1.2rem;
+            border-top-right-radius: 1.2rem;
+        }
+        .footer-bottom {
+            font-size: 0.75rem;
+        }
+    }
+    </style>
+</head>
+<body id="top">
+    <div class="back-btn-wrapper">
+        <a href="index.html" class="back-home-btn" title="Back to Home">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Back</span>
+        </a>
+    </div>
+    <button class="back-to-top" id="backToTopBtn" title="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <section class="section">
+        <div class="container">
+            <div class="contact-card">
+                <div class="contact-header">
+                    <div class="last-updated">
+                        <i class="fa-regular fa-calendar-days"></i> ASW Education
+                    </div>
+                    <h1>Contact <span>Us</span></h1>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info-card">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p>+94 70 776 3739</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card email-card">
+                        <i class="fa-regular fa-envelope"></i>
+                        <div>
+                            <h3>Email Address</h3>
+                            <p>info<wbr>.asweducation<wbr>@gmail<wbr>.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-header" style="margin-bottom: 2rem; padding-bottom: 1.5rem;">
+                    <h1 style="font-size: 2rem;">Send a <span>Message</span></h1>
+                </div>
+                <div class="form-container">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name / නම</label>
+                            <input type="text" id="name" name="name" class="form-control" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email / විද්‍යුත් තැපෑල</label>
+                            <input type="text" id="email" name="email" class="form-control" placeholder="name@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp">WhatsApp Number / දුරකථන අංකය</label>
+                            <input type="text" id="whatsapp" name="whatsapp" class="form-control" placeholder="070 776 3739">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message / පණිවිඩය</label>
+                            <textarea id="message" name="message" class="form-control" required placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit" id="submitBtn" class="btn-submit">Send Message / පණිවිඩය යවන්න</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 ASW EDUCATION. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+        
+        // Initialize Supabase Client
+        const _sb = supabase.createClient('https://pelbzkhuxsvmldfqzlkx.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlbGJ6a2h1eHN2bWxkZnF6bGt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE5MjI3NzgsImV4cCI6MjA5NzQ5ODc3OH0.BQ_k-PABq9E52eTRiQ0hqkhRVVA_U_bShTBEofB5lY4');
+        
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const originalBtnText = submitBtn.innerText;
+            
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Sending / යවමින් පවතී...";
+            
+            const emailVal = document.getElementById('email').value.trim();
+            const whatsappVal = document.getElementById('whatsapp').value.trim();
+            
+            const formData = {
+                name: document.getElementById('name').value.trim(),
+                email: emailVal === "" ? "Not Provided" : emailVal,
+                whatsapp: whatsappVal === "" ? "Not Provided" : whatsappVal,
+                message: document.getElementById('message').value.trim()
+            };
+            
+            try {
+                const { data, error } = await _sb
+                    .from('contact_submissions')
+                    .insert([formData]);
+                
+                if (error) throw error;
+                
+                alert('Message sent successfully! / පණිවිඩය සාර්ථකව යවන ලදී!');
+                document.getElementById('contactForm').reset();
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert('Something went wrong. Please try again later. / යම් දෝෂයක් සිදු වී ඇත. පසුව නැවත උත්සාහ කරන්න.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalBtnText;
+            }
+        });
+    </script>
+</body>
+</html>
