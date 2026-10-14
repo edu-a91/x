@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Daily Quiz | ASW Education</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Sinhala:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Supabase JS Client CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        :root {
+            --max-width: 800px;
+            --transition: all .3s cubic-bezier(.4, 0, .2, 1);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans Sinhala', 'Inter', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #fff0f5 0%, #fff5f8 50%, #fef2f2 100%);
+            color: #0f172a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 0.5rem;
+            position: relative;
+        }
+        .home-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #d81b60;
+            border: 2px solid rgba(255, 117, 140, 0.4);
+            padding: 0.4rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: var(--transition);
+            z-index: 1000;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(255, 65, 108, 0.15);
+        }
+        .home-btn:hover {
+            background: #fff;
+            color: #ff416c;
+            border-color: #ff416c;
+            transform: scale(1.05);
+        }
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 2.5rem auto 0 auto;
+        }
+        .notice-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px dashed rgba(255, 117, 140, 0.6);
+            border-radius: 16px;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #d81b60;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 15px rgba(255, 65, 108, 0.1);
+        }
+        .quiz-card {
+            background: linear-gradient(-45deg, #fff0f5, #ffe4e1, #fff5ee, #ffc0cb);
+            background-size: 400% 400%;
+            animation: bgGradientMove 10s ease infinite, glowingBorder 3s infinite;
+            border: 2.5px solid #ff758c;
+            border-radius: 20px;
+            padding: 1.25rem 1rem;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(255, 65, 108, 0.2);
+        }
+        @keyframes glowingBorder {
+            0% { border-color: #ff758c; box-shadow: 0 0 15px rgba(255, 117, 140, 0.4); }
+            50% { border-color: #ffeb3b; box-shadow: 0 0 20px rgba(255, 235, 59, 0.6); }
+            100% { border-color: #ff758c; box-shadow: 0 0 15px rgba(255, 117, 140, 0.4); }
+        }
+        @keyframes bgGradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .register-container h2 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #d81b60, #ad1457);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: .5rem;
+            text-align: center;
+        }
+        .register-container p {
+            font-size: 0.85rem;
+            color: #4a5568;
+            margin-bottom: 1.25rem;
+            line-height: 1.4;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+            text-align: left;
+            width: 100%;
+            max-width: 100%;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #334155;
+            margin-bottom: .3rem;
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.65rem 0.9rem;
+            border: 2px solid rgba(255, 117, 140, 0.4);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 0.85rem;
+            outline: none;
+            transition: var(--transition);
+        }
+        .form-control:focus {
+            border-color: #ff416c;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(255, 65, 108, 0.2);
+        }
+        .quiz-screen {
+            display: none;
+        }
+        .quiz-header {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid rgba(255, 117, 140, 0.2);
+            padding-bottom: 0.75rem;
+        }
+        .quiz-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #d81b60, #ad1457);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .question-counter {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: white;
+            padding: 0.25rem 0.7rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+        .question-text {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        .answer-box-container {
+            margin-bottom: 1rem;
+        }
+        .answer-textarea {
+            width: 100%;
+            padding: 0.75rem 0.9rem;
+            border: 2px solid rgba(255, 117, 140, 0.4);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 0.85rem;
+            outline: none;
+            resize: vertical;
+            transition: var(--transition);
+        }
+        .answer-textarea:focus {
+            border-color: #ff416c;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(255, 65, 108, 0.2);
+        }
+        .quiz-footer {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 1rem;
+            border-top: 2px solid rgba(255, 117, 140, 0.2);
+            padding-top: 0.75rem;
+        }
+        .btn {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: 0 5px 15px rgba(255, 65, 108, 0.4);
+            transition: var(--transition);
+            width: 100%;
+        }
+        .btn:hover {
+            transform: scale(1.02);
+        }
+        .result-screen {
+            display: none;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .result-screen h2 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #d81b60, #ad1457);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.75rem;
+        }
+        .result-screen p {
+            font-size: 0.85rem;
+            color: #4a5568;
+            margin-bottom: 1.25rem;
+            line-height: 1.4;
+        }
+
+        @media (min-width: 481px) {
+            body { padding: 2rem 1rem; }
+            .home-btn { top: 20px; left: 20px; padding: 0.6rem 1.2rem; font-size: 0.95rem; gap: 0.5rem; }
+            .container { margin-top: 3.5rem; }
+            .notice-card { font-size: 0.95rem; padding: 0.9rem 1.25rem; border-radius: 16px; margin-bottom: 1.5rem; }
+            .quiz-card { padding: 2.5rem; border-radius: 30px; }
+            .register-container h2 { font-size: 2rem; margin-bottom: .75rem; }
+            .register-container p { font-size: 1.05rem; margin-bottom: 2rem; }
+            .form-group { max-width: 450px; margin-left: auto; margin-right: auto; margin-bottom: 1.5rem; }
+            .form-group label { font-size: .95rem; margin-bottom: .5rem; }
+            .form-control { padding: .9rem 1.25rem; border-radius: 16px; font-size: 1rem; }
+            .quiz-header { flex-direction: row; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1rem; }
+            .quiz-title { font-size: 1.5rem; }
+            .question-counter { padding: .4rem 1.1rem; font-size: .85rem; }
+            .question-text { font-size: 1.25rem; margin-bottom: 1.5rem; }
+            .answer-textarea { padding: 1rem 1.25rem; border-radius: 16px; font-size: 1rem; }
+            .quiz-footer { margin-top: 2rem; padding-top: 1.5rem; }
+            .btn { padding: .9rem 2.2rem; font-size: 1rem; width: auto; }
+            .result-screen h2 { font-size: 2.2rem; margin-bottom: 1rem; }
+            .result-screen p { font-size: 1.15rem; margin-bottom: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <a href="daily-quiz.html" class="home-btn"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    <div class="container">
+        <div class="notice-card">
+            <i class="fa-solid fa-circle-info" style="color: #ff416c;"></i>
+            <span>WhatsApp අංකය ජයග්‍රාහකයා සම්බන්ධ කර ගැනීමට පමණක් වන අතර, කිසිදු මුදලක් අය කරනු නොලැබේ.</span>
+        </div>
+        <div class="quiz-card" id="quizCard">
+            <!-- Register Screen -->
+            <div class="register-container" id="registerScreen">
+                <h2>Daily Quiz</h2>
+                <p>ඔබේ නම සහ WhatsApp අංකය ඇතුළත් කර ආරම්භ කරන්න.</p>
+                <form onsubmit="startQuiz(event)">
+                    <div class="form-group">
+                        <label for="userName">ඔබේ නම (Name)</label>
+                        <input type="text" id="userName" class="form-control" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userPhone">WhatsApp අංකය (WhatsApp Number)</label>
+                        <input type="tel" id="userPhone" class="form-control" placeholder="WhatsApp Number" pattern="[0-9]{10}" required>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">
+                        Start Quiz <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Quiz / Question & Answer Screen -->
+            <div class="quiz-screen" id="quizScreen">
+                <div class="quiz-header">
+                    <div class="quiz-title"><i class="fa-solid fa-calculator"></i> Daily Quiz</div>
+                    <div class="question-counter">Daily Quiz - 1</div>
+                </div>
+                <div class="question-container">
+                    <div class="question-text" id="questionText">ප්‍රශ්නය පූරණය වෙමින් පවතී...</div>
+                    <div class="answer-box-container">
+                        <textarea id="answerInput" class="answer-textarea" rows="4" placeholder="ඔබේ පිළිතුර මෙහි ලියන්න..." required></textarea>
+                    </div>
+                </div>
+                <div class="quiz-footer">
+                    <button class="btn" id="submitBtn" onclick="submitAnswer()">
+                        Submit <i class="fa-solid fa-check"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Result Screen -->
+            <div class="result-screen" id="resultScreen">
+                <h2></h2>
+                <p>ඔබේ පිළිතුර සාර්ථකව යොමු කරන ලදී.</p>
+                <button class="btn" onclick="location.reload()">
+                    <i class="fa-solid fa-rotate-right"></i> නැවත පිටුවට යන්න
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const SUPABASE_URL = 'https://eahasxhxpouvkoiurwqp.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVhaGFzeGh4cG91dmtvaXVyd3FwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk5NTk0NjYsImV4cCI6MjEwNTUzNTQ2Nn0.3D4xGumAb-BoFQuEmgyGrR1VWQ3VRgfA6FUnQfQ4F58';
+        const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        let currentQuestionData = {
+            id: 'monthly-q-1',
+            question: 'ශ්‍රී ලංකාවේ නිදහස් දිනය කවදාද?'
+        };
+
+        window.addEventListener("DOMContentLoaded", async () => {
+            const savedName = localStorage.getItem("quiz_user_name");
+            const savedPhone = localStorage.getItem("quiz_user_phone");
+
+            if (savedName && savedPhone) {
+                document.getElementById("userName").value = savedName;
+                document.getElementById("userPhone").value = savedPhone;
+            }
+            await fetchMonthlyQuestion();
+        });
+
+        async function fetchMonthlyQuestion() {
+            try {
+                // Gets current year and month prefix (e.g., "2026-06")
+                const currentMonthPrefix = new Date().toISOString().slice(0, 7); 
+
+                let { data, error } = await _supabase
+                    .from('daily_questions')
+                    .select('id, question, quiz_date')
+                    .ilike('quiz_date', `${currentMonthPrefix}%`)
+                    .limit(1)
+                    .single();
+
+                if (!error && data) {
+                    currentQuestionData = data;
+                }
+            } catch (err) {
+                console.log("Using fallback question for the month.");
+            }
+        }
+
+        function startQuiz(event) {
+            event.preventDefault();
+            localStorage.setItem("quiz_user_name", document.getElementById("userName").value);
+            localStorage.setItem("quiz_user_phone", document.getElementById("userPhone").value);
+
+            document.getElementById("registerScreen").style.display = "none";
+            document.getElementById("quizScreen").style.display = "block";
+            document.getElementById("questionText").textContent = currentQuestionData.question;
+        }
+
+        async function submitAnswer() {
+            const name = localStorage.getItem("quiz_user_name");
+            const phone = localStorage.getItem("quiz_user_phone");
+            const answerText = document.getElementById("answerInput").value.trim();
+
+            if (!answerText) {
+                alert("කරුණාකර ඔබේ පිළිතුර ඇතුළත් කරන්න!");
+                return;
+            }
+
+            try {
+                await _supabase.from('answers').insert([{
+                    question_id: currentQuestionData.id,
+                    content: `[By: ${name}] ${answerText}`,
+                    whatsapp: phone
+                }]);
+            } catch (e) {
+                console.log("Submission error:", e);
+            }
+
+            document.getElementById("quizScreen").style.display = "none";
+            document.getElementById("resultScreen").style.display = "block";
+        }
+    </script>
+</body>
+</html>
