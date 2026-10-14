@@ -8,61 +8,7 @@
         <priority>1.0</priority>
     </url>
 
-    <!-- Main O/L Science Hub -->
-    <url>
-        <loc>https://www.asweducation.online/ol-science.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- Study Packs Page -->
-    <url>
-        <loc>https://www.asweducation.online/study-packs-science.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Flashcards Page -->
-    <url>
-        <loc>https://www.asweducation.online/flashcards-science.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Model Papers Page -->
-    <url>
-        <loc>https://www.asweducation.online/model-papers-science.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Practicals Page -->
-    <url>
-        <loc>https://www.asweducation.online/practicals-science.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Contact Page -->
-    <url>
-        <loc>https://www.asweducation.online/contact.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
-
-    <!-- Feedback Page -->
-    <url>
-        <loc>https://www.asweducation.online/feedback.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
+  
 
     <!-- Privacy Policy Page -->
     <url>
