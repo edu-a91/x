@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASW Education  | Carbohydrates</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --mono-primary: #f48fb1;
+            --mono-dark: #c62828;
+            --mono-bg: #fff5f8;
+            --di-primary: #81d4fa;
+            --di-dark: #0277bd;
+            --di-bg: #e1f5fe;
+            --poly-primary: #a5d6a7;
+            --poly-dark: #2e7d32;
+            --poly-bg: #e8f5e9;
+        }
+
+        body {
+            font-family: 'Poppins', 'Noto Sans Sinhala', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.8;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        .container:nth-of-type(1) h1 { border-bottom: 4px solid var(--mono-primary); color: var(--mono-dark); }
+        .container:nth-of-type(1) .card { border-left: 10px solid var(--mono-primary); }
+        .container:nth-of-type(1) .formula-box { border: 2px solid var(--mono-primary); color: var(--mono-dark); }
+        .container:nth-of-type(1) .sub-card { background: var(--mono-bg); border: 1px solid var(--mono-primary); }
+
+        .container:nth-of-type(2) h1 { border-bottom: 4px solid var(--di-primary); color: var(--di-dark); }
+        .container:nth-of-type(2) .card { border-left: 10px solid var(--di-primary); }
+        .container:nth-of-type(2) .formula-box { border: 2px solid var(--di-primary); color: var(--di-dark); }
+        .container:nth-of-type(2) .sub-card { background: var(--di-bg); border: 1px solid var(--di-primary); }
+
+        .container:nth-of-type(3) h1 { border-bottom: 4px solid var(--poly-primary); color: var(--poly-dark); }
+        .container:nth-of-type(3) .card { border-left: 10px solid var(--poly-primary); }
+        .container:nth-of-type(3) .formula-box { border: 2px solid var(--poly-primary); color: var(--poly-dark); }
+        .container:nth-of-type(3) .sub-card { background: var(--poly-bg); border: 1px solid var(--poly-primary); }
+
+        h1 { text-align: center; margin-bottom: 40px; padding-bottom: 10px; }
+        .card { background-color: white; border-radius: 20px; padding: 30px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease; }
+        .card:hover { transform: translateY(-5px); }
+        h2 { display: flex; align-items: center; gap: 12px; color: #333; }
+        .sub-card { padding: 20px; border-radius: 15px; margin-top: 15px; }
+        .formula-box { background: #fff; padding: 15px; border-radius: 10px; text-align: center; font-weight: bold; font-size: 1.2rem; margin: 15px 0; }
+        
+        .floating-back-btn { position: fixed; top: 20px; left: 20px; z-index: 1000; background: #f48fb1; color: #fff; width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .check-list { list-style-type: none; padding-left: 0; }
+        .check-list li::before { content: "\f00c"; font-family: 'Font Awesome 6 Free'; font-weight: 900; margin-right: 12px; color: #555; }
+
+        .pink-card { border-left-color: #f48fb1; background-color: #fff5f8; }
+
+        
+
+           .nav-item {
+        text-decoration: none; 
+        color: #333; 
+        padding: 15px; 
+        background: white; 
+        border-radius: 12px; 
+        border-left: 5px solid #f48fb1; 
+        font-weight: 600; 
+        transition: all 0.3s ease; 
+    }
+    .nav-item:hover {
+        background-color: #f48fb1;
+        color: white;
+        padding-left: 25px; /* Creates the sliding effect */
+        border-left: 5px solid #d81b60; /* Darkens the border color on hover */
+    }
+
+        /* Responsive Design for smaller devices */
+        @media (max-width: 600px) {
+            body { padding: 20px 10px; font-size: 0.9rem; }
+            .card { padding: 20px; }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+            .formula-box { font-size: 1rem; padding: 10px; }
+            .sub-card { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="grade-10-1.html" class="floating-back-btn"><i class="fas fa-arrow-left"></i></a>
+
+    <br>
+
+     <div class="container">
+        <h1>මොනොසැකරයිඩ </h1>
+
+        <div class="card">
+            <h2><i class="fas fa-book-open"></i> හැඳින්වීම</h2>
+            
+            <p>මොනොසැකරයිඩවල ප්‍රධාන ලක්ෂණ පහත පරිදි වේ:</p>
+            
+            <ul class="check-list">
+                <li>කාබොහයිඩ්රේටවල තැනුම් ඒකකය වේ.</li>
+                <li>සරල සීනි ලෙස හඳුන්වනු ලැබේ.</li>
+                <li>ස්ඵටික ස්වරූපයක් ගනී.</li>
+                <li>ජලයේ දිය වේ.</li>
+                <li>සාමාන්‍යයෙන් පැණි රසයකින් යුක්ත වේ.</li>
+                <li>නිදසුන්: ග්ලූකෝස්, පෘක්‌ටෝස් හා ගැලැක්ටෝස්.</li>
+            </ul>
+
+            <div class="formula-box">
+                පොදු අණුක සූත්‍රය: C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><i class="fas fa-list-ul"></i> මොනොසැකරයිඩ වර්ගීකරණය</h2>
+
+            <div class="sub-card">
+                <h3><i class="fas fa-cube" style="color: var(--dark-red);"></i> ග්ලූකෝස්</h3>
+                <p><b>පවතින ස්ථාන:</b> ඉදුණු පලතුරු, මී පැණි</p>
+                <ul style="list-style-type: square;">
+                    <li>සියලුම පිෂ්ටමය ආහාර ජීර්ණයේ අන්ත ඵලය ග්ලූකෝස් ය. එම ග්ලූකෝස් රුධිරයට අවශෝෂණය වේ.</li>
+                    <li>ශාක ප්‍රභාසංස්ලේෂණයේ දී නිපදවන්නේ ග්ලූකෝස් ය.</li>
+                    <li>සෛලීය ශ්වසනයේ දී ග්ලූකෝස් බිඳ හෙලීමෙන් ශක්තිය නිදහස් වේ.</li>
+                </ul>
+            </div>
+
+            <div class="sub-card">
+                <h3><i class="fas fa-cube" style="color: var(--dark-red);"></i> පෘක්‌ටෝස්</h3>
+                <p><b>පවතින ස්ථාන:</b> ඉදුණු පලතුරු, මී පැණි, වට්ටක්කා, කැරට්</p>
+                <ul style="list-style-type: square;">
+                    <li>පලතුරු සීනි ලෙස හඳුන්වයි.</li>
+                    <li>අමු පලතුරු ඉදෙන විට ඒවා තුළ පෘක්‌ටෝස් සැදේ.</li>
+                    <li>පැණි රසින් වැඩි ම සීනි වර්ගය මෙයයි.</li>
+                </ul>
+            </div>
+
+            <div class="sub-card">
+                <h3><i class="fas fa-cube" style="color: var(--dark-red);"></i> ගැලැක්ටෝස්</h3>
+                <p><b>පවතින ස්ථාන:</b> කිරි ආහාරවල</p>
+                <ul style="list-style-type: square;">
+                    <li>ලැක්ටෝස් ජීර්ණයේ ඵල වේ.</li>
+                    <li>පැණි රසක් නැත.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="container">
+        <h1>ඩයිසැකරයිඩ </h1>
+
+        <div class="card">
+            <h2><i class="fas fa-info-circle"></i> හැඳින්වීම</h2>
+            
+            <p>ඩයිසැකරයිඩවල ප්‍රධාන ලක්ෂණ පහත පරිදි වේ:</p>
+            
+            <ul class="check-list">
+                <li>මොනොසැකරයිඩ අණු 2ක් එකතු වීමෙන් ඩයිසැකරයිඩ සැදේ.මෙම ක්‍රියාවලියේදී ජල අණුවක් පිටවේ.</li>
+                <li>ඩයිසැකරයිඩ අණුවකට ජල අණුවක් එකතු කිරීම මගින් නැවත මොනොසැකරයිඩ ලබාගත හැක.</li>
+                <li>ජලයේ ද්‍රාව්‍ය වේ.</li>
+                <li>පැණි රසයෙන් යුත් ස්ඵටික වේ.</li>
+                <li>නිදසුන්: මෝල්ටෝස්, සුක්රෝස්, ලැක්ටෝස්</li>
+            </ul>
+
+            <div class="formula-box">
+                මොනොසැකරයිඩ + මොනොසැකරයිඩ ⇌ ඩයිසැකරයිඩ + ජල අණුව<br>
+                2C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> ⇌ C<sub>12</sub>H<sub>22</sub>O<sub>11</sub> + H<sub>2</sub>O
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><i class="fas fa-list-ul"></i> ඩයිසැකරයිඩ වර්ගීකරණය</h2>
+
+            <div class="sub-card">
+                <h3><i class="fas fa-cube" style="color: var(--dark-red);"></i> මෝල්ටෝස්</h3>
+                <p><b>පවතින ස්ථාන:</b> ප්‍රරෝහණය වන බීජවල</p>
+                <ul class="check-list">
+                    <li>ග්ලූකෝස් අණු 2ක් එකතු වීමෙන් සැදේ. (ග්ලූකෝස් + ග්ලූකෝස් → මෝල්ටෝස් + ජලය)</li>
+                    <li>පිෂ්ටය ජීර්ණයේ අතරමැදි ඵලයකි.</li>
+                </ul>
+            </div>
+
+            <div class="sub-card">
+                <h3><i class="fas fa-cube" style="color: var(--dark-red);"></i> සුක්රෝස් </h3>
+                <p><b>පවතින ස්ථාන:</b> සුදු සහ රතු සීනි, උක්, බීට්, ඇතැම් පලතුරු හා ශාක වල ප්ලෝයමීය යුෂයේ</p>
+                <ul class="check-list">
+                    <li>පෘක්‌ටෝස් අණුවක් හා ග්ලූකෝස් අණුවක් එකතු වීමෙන් සැදේ. <br>(පෘක්‌ටෝස් + ග්ලූකෝස් → සුක්රෝස්  + ජලය)</li>
+                </ul>
+            </div>
+
+            <div class="sub-card">
+                <h3><i class="fas fa-cube" style="color: var(--dark-red);"></i> ලැක්ටෝස්</h3>
+                <p><b>පවතින ස්ථාන:</b> කිරි ආහාරවල</p>
+                <ul class="check-list">
+                    <li>ගැලැක්ටෝස් අණුවක් හා ග්ලූකෝස් අණුවක් එකතු වීමෙන් සැදේ. (ගැලැක්ටෝස් + ග්ලූකෝස් → ලැක්ටෝස් + ජලය)</li>
+                    <li>ශාකවල නොමැති එකම සීනි වර්ගයයි.</li>
+                    <li>සුක්රෝස් මෙන් පැණි රස නැත.</li>
+                    <li>සංයුතිය අනුව එළකිරිවල ලැක්ටෝස් ප්‍රතිශතය 4% - 6% </li>
+                    <li>සංයුතිය අනුව මව්කිරිවල ලැක්ටෝස් ප්‍රතිශතය 6% - 7% </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+     <br><br>
+
+    <div class="container">
+        <h1>පොලිසැකරයිඩ </h1>
+
+    <div class="card">
+        <h2><i class="fas fa-info-circle"></i> හැඳින්වීම</h2>
+
+         <p>පොලිසැකරයිඩවල ප්‍රධාන ලක්ෂණ පහත පරිදි වේ:</p>
+            
+            <ul class="check-list">
+                <li>මොනොසැකරයිඩ අණු රාශියක් බහුඅවයවීකරණය වීමෙන් පොලිසැකරයිඩ සැදේ.</li>
+                <li>පොලිසැකරයිඩ ජල විච්ඡේදනය වීමෙන් නැවත මොනොසැකරයිඩ සැදේ.</li>
+                <li>මේවා ඇල් ජලයේ අද්‍රාව්‍ය වේ.</li>
+                <li> ස්ඵටිකරූපී නොවේ.</li>
+                <li> නිදසුන්: සෙලියුලෝස්, පිෂ්ටය හා ග්ලයිකොජන් </li>
+            </ul>
+       
+       
+        
+        <div class="formula-box">
+            පොදු අණුක සූත්‍රය: (C<sub>6</sub>H<sub>10</sub>O<sub>5</sub>)<sub>n</sub>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2><i class="fas fa-list-ul"></i> පොලිසැකරයිඩ වර්ගීකරණය</h2>
+
+        <div class="sub-card">
+            <h3><i class="fas fa-cube" style="color: var(--dark-red);"></i> සෙලියුලෝස්</h3>
+            <p><b>පවතින ස්ථාන:</b> ශාක සෛල බිත්තිවල , ශාක තුළ පිහිටි තන්තුවල</p>
+            <ul style="list-style-type: square;">
+                <li>මිනිස් ජීර්ණ පද්ධතිය තුළ ජීර්ණයට ලක් නොවේ.</li>
+                 <li>මලබද්ධය වළක්වා ගැනීමට උදව් වේ.</li>
+            </ul>
+        </div>
+
+        <div class="sub-card">
+            <h3><i class="fas fa-cube" style="color: var(--dark-red);"></i> පිෂ්ටය</h3>
+            <p><b>පවතින ස්ථාන:</b> ධාන්‍ය වර්ග, අල වර්ග, කොස්, දෙල්</p>
+            <ul style="list-style-type: square;">
+                <li>ශාකවල ගබඩා කෙරෙන කාබොහයිඩ්රේට වර්ගය පිෂ්ටයයි.</li>
+            </ul>
+        </div>
+
+        <div class="sub-card">
+            <h3><i class="fas fa-cube" style="color: var(--dark-red);"></i> ග්ලයිකොජන්</h3>
+            <p><b>පවතින ස්ථාන:</b> සත්ත්ව අක්මාවේ හා පේශිවල</p>
+            <ul style="list-style-type: square;">
+                <li>සතුන්ගේ සිරුරු තුළ කාබොහයිඩ්රේට සංචිත කරනු ලබන්නේ ග්ලයිකොජන් ලෙසයි.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2><i class="fas fa-star" style="color: var(--dark-red);"></i> කාබොහයිඩ්‍රේටවල වැදගත්කම</h2>
+        <ul style="list-style-type: circle;">
+            <li><b>ශක්ති ප්‍රභවයක් ලෙස</b> </li>
+            <li><b>සංචිත ආහාරයක් ලෙස</b></li>
+            <li><b>ජීවීන්ගේ සෛල බිත්ති නිර්මාණය කිරීමට</b></li>
+            <li><b>නියුක්ලෙයික් අම්ලවල සංඝටකයක් ලෙස</b></li>
+        </ul>
+    </div>
+    
+    
+
+
+    
+
+
+ <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="analytics.js"></script>
+
+
+</body>
+</html>

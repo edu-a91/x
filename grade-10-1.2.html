@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASW Education | Grade 10 </title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-pink: #f48fb1;
+            --secondary-red: #d32f2f;
+            --dark-grey: #2c3e50;
+            --bg-color: #fdf5f7;
+        }
+        body { 
+            font-family: 'Poppins', 'Noto Sans Sinhala', sans-serif; 
+            background-color: var(--bg-color); 
+            color: #333; 
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 40px 20px; 
+        }
+        .container { max-width: 600px; margin: 0 auto; }
+        
+        h1 { 
+            text-align: center; 
+            color: var(--secondary-red); 
+            margin-bottom: 40px; 
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary-pink); 
+        }
+        
+        .floating-back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: pink;
+            color: #000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(209, 196, 233, 0.4);
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .card { 
+            background-color: white; 
+            border-radius: 20px; 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); 
+            border-left: 8px solid var(--primary-pink); 
+            transition: transform 0.3s ease, border-color 0.3s ease; 
+        }
+        
+        .card:hover { 
+            transform: translateY(-5px);
+            border-left-color: var(--secondary-red);
+        }
+
+        h2 { color: var(--dark-grey); display: flex; align-items: center; gap: 12px; margin-top: 0; }
+
+        .element-list { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+        
+        .element-item { 
+            background: #fff; 
+            padding: 15px; 
+            border-radius: 15px; 
+            display: flex; 
+            align-items: center; 
+            gap: 20px; 
+            border: 1px solid #ffebee; 
+            transition: 0.3s;
+        }
+        
+        .element-item:hover { border-color: var(--primary-pink); background: #fffcfd; }
+        
+        .symbol { 
+            background: var(--primary-pink); 
+            color: white; 
+            min-width: 50px; 
+            height: 50px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            border-radius: 50%; 
+            font-weight: bold; 
+            font-size: 1.2rem;
+        }
+        
+        .info strong { color: var(--secondary-red); display: block; }
+
+        /* Responsive adjustments */
+        @media(max-width: 768px) { 
+            h1 { font-size: 1.3rem; }
+            .info { font-size: 0.9rem; }
+            .symbol { min-width: 40px; height: 40px; font-size: 1rem; }
+            .element-item { gap: 12px; padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <a href="grade-10-1.html" class="floating-back-btn" title="Go Back">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+    <br>
+    <div class="container">
+        <h1>ජීවී දේහයේ මූලද්‍රව්‍ය සංයුතිය (ස්කන්ධය අනුව ප්‍රතිශතය)</h1>
+        <div class="card">
+           
+             <div class="element-list">
+            <div class="element-item"><div class="symbol">O</div><div class="info"><strong>ඔක්සිජන් (65%)</strong><small>සියලුම තරලවල, පටක, අස්ථි, ප්‍රෝටීන්</small></div></div>
+            <div class="element-item"><div class="symbol">C</div><div class="info"><strong>කාබන් (18%)</strong><small>සිරුරේ සෑම තැනම </small></div></div>
+            <div class="element-item"><div class="symbol">H</div><div class="info"><strong>හයිඩ්‍රජන් (10%)</strong><small>සියලුම තරලවල, පටක, අස්ථි, ප්‍රෝටීන්</small></div></div>
+            <div class="element-item"><div class="symbol">N</div><div class="info"><strong>නයිට්‍රජන් (3%)</strong><small>සියලුම තරලවල, පටක, ප්‍රෝටීන්</small></div></div>
+            <div class="element-item"><div class="symbol">Ca</div><div class="info"><strong>කැල්සියම් (1.5%)</strong><small>මොළය, පෙනහළු, වෘක්ක, අක්මාව, හෘදය, තයිරොයිඩ් ග්‍රන්ථිය, පේශි, අස්ථි</small></div></div>
+            <div class="element-item"><div class="symbol">P</div><div class="info"><strong>පොස්පරස් (1.0%)</strong><small>මුත්‍ර, අස්ථි</small></div></div>
+            <div class="element-item"><div class="symbol">K</div><div class="info"><strong>පොටෑසියම් (0.35%)</strong><small>එන්සයිමවල </small></div></div>
+            <div class="element-item"><div class="symbol">S</div><div class="info"><strong>සල්ෆර් (0.25%)</strong><small>ප්‍රෝටීනවල </small></div></div>
+            <div class="element-item"><div class="symbol">Na</div><div class="info"><strong>සෝඩියම් (0.15%)</strong><small>සියලුම තරලවල, පටකවල </small></div></div>
+            <div class="element-item"><div class="symbol">Mg</div><div class="info"><strong>මැග්නීසියම් (0.05%)</strong><small>මොළය, පෙනහළු, වෘක්ක, අක්මාව, හෘදය, තයිරොයිඩ් ග්‍රන්ථිය, පේශි</small></div></div>
+            <div class="element-item"><div class="symbol">Cl</div><div class="info"><strong>ක්ලෝරීන් (0.2%)</strong><small>සමේ සෛලවල </small></div></div>
+            
+            
+            <div class="element-item"><div class="symbol">Fe</div><div class="info"><strong>යකඩ (0.007%)</strong><small>රුධිරයේ හීමොග්ලොබින් වල</small></div></div>
+            <div class="element-item"><div class="symbol">I</div><div class="info"><strong>අයඩින් (0.0002%)</strong><small>තයිරොයිඩ් ග්‍රන්ථි හෝමෝනවල</small></div></div>
+        </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="analytics.js"></script>
+
+</body>
+</html>

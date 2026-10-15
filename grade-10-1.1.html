@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+   <title>Grade 10 Science | ASW Education </title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+   
+    <style>
+        :root {
+            --primary-blue: #3498db;
+            --dark-blue: #2c3e50;
+            --success-green: #27ae60;
+        }
+
+        body { 
+            font-family: 'Poppins', 'Noto Sans Sinhala', sans-serif; 
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.8;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container { 
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 { 
+            text-align: center;
+            color: var(--dark-blue);
+            font-weight: 700;
+            margin-bottom: 40px;
+            border-bottom: 4px solid var(--primary-blue);
+            display: inline-block;
+            width: 100%;
+            padding-bottom: 10px;
+        }
+
+        .card { 
+            background-color: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-left: 10px solid;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+
+        .blue-card { border-left-color: #90caf9; background-color: #f0f7ff; }
+        .green-card { border-left-color: #a5d6a7; background-color: #f4faf4; }
+        .yellow-card { border-left-color: #fff59d; background-color: #fffdf0; }
+        .pink-card { border-left-color: #f48fb1; background-color: #fff5f8; }
+        .purple-card { border-left-color: #ce93d8; background-color: #faf5ff; }
+
+        h2 { 
+            color: var(--dark-blue);
+            margin-top: 0;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-header {
+            color: var(--success-green);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .image-placeholder {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f9f9f900;
+            border-radius: 10px;
+            color: #faf6f600;
+            font-size: 0.9em;
+        }
+
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .formula { 
+            display: block;
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            font-family: 'Poppins', 'Noto Sans Sinhala', sans-serif; 
+            font-weight: bold;
+            margin: 15px 0;
+            border: 1px solid pink;
+            color: var(--dark-blue);
+        }
+
+        .content-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .content-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .content-list > li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--primary-blue);
+            position: absolute;
+            left: 0;
+            font-size: 0.8em;
+        }
+
+        .content-list li ul li::before {
+            content: none;
+        }
+
+        .content-list li ul li {
+            padding-left: 0;
+        }
+
+        .highlight { font-weight: bold; color: #d35400; }
+        strong { color: var(--dark-blue); }
+
+        .floating-back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: pink;
+            color: #000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(209, 196, 233, 0.4);
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-item {
+        text-decoration: none; 
+        color: #333; 
+        padding: 15px; 
+        background: white; 
+        border-radius: 12px; 
+        border-left: 5px solid #f48fb1; 
+        font-weight: 600; 
+        transition: all 0.3s ease; 
+    }
+    .nav-item:hover {
+        background-color: #f48fb1;
+        color: white;
+        padding-left: 25px; /* Creates the sliding effect */
+        border-left: 5px solid #d81b60; /* Darkens the border color on hover */
+    }
+            
+        /* Tablet and Mobile adjustments */
+        @media(max-width: 768px) {
+            body { font-size: 14px; padding: 20px 15px; }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+            .card { padding: 20px; }
+            .formula { font-size: 0.9rem; }
+        }
+
+        @media(max-width: 520px) {
+            body { font-size: 13px; }
+            h1 { font-size: 1.3rem; }
+            .floating-back-btn { top: 15px; left: 15px; width: 45px; height: 45px; }
+            .section-header { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+
+     <a href="grade-10-1.html" class="floating-back-btn" title="Go Back">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <br>
+
+
+<div class="container">
+    <h1>ජීවයේ රසායනික පදනම</h1>
+
+    <div class="card blue-card">
+        <h2><i class="fas fa-info-circle"></i> හැඳින්වීම</h2>
+        <p>ජීවීන්ගේ දේහ විවිධ රසායනික සංයෝග රැසකින් සමන්විත වේ. ස්වභාවිකව පවතින මූලද්‍රව්‍ය 92 අතරින් 25ක් පමණ ජීව දේහ තුළ අඩංගු වේ. මෙයින් ප්‍රධාන වශයෙන්ම දායක වන්නේ <strong>කාබන් (C), හයිඩ්‍රජන් (H), ඔක්සිජන් (O) සහ නයිට්‍රජන් (N)</strong> යන මූලද්‍රව්‍ය හතරයි.</p>
+         <p>මීට අමතරව <strong> සල්ෆර්, පොස්ෆරස්, සෝඩියම්, පොටෑසියම්, කැල්සියම්, මැග්නීසියම්, අයන්, ක්ලෝරීන්  </strong>වැනි මූලද්‍රව්‍ය ද ජීව ක්‍රියාවලීන් සඳහා අත්‍යවශ්‍ය වේ.</p>
+        <br>
+
+       
+
+        <span class="section-header"><i class="fas fa-chart-pie"></i> ප්‍රධාන මූලද්‍රව්‍යවල දායකත්වය (ස්කන්ධය අනුව):</span>
+        <ul class="content-list">
+            <li><strong>ඔක්සිජන් (65%):</strong> සිරුරේ ජලය සහ කාබනික සංයෝගවල ප්‍රධාන සංරචකයකි.</li>
+            <li><strong>කාබන් (18%):</strong> සියලුම කාබනික සංයෝගවල (කාබෝහයිඩ්‍රේට, ප්‍රෝටීන්, ලිපිඩ, නියුක්ලෙයික් අම්ල) අඩංගු වේ.</li>
+            <li><strong>හයිඩ්‍රජන් (10%):</strong> ජලය සහ සියලුම ජෛව අණුවල අඩංගු වේ.</li>
+            <li><strong>නයිට්‍රජන් (3%):</strong> ප්‍රෝටීන් සහ නියුක්ලික් අම්ල (DNA/RNA) සෑදීමට අත්‍යවශ්‍ය වේ.</li>
+            <li><strong>වෙනත් (4%)</strong> </li>
+        </ul>
+
+        <div class="image-placeholder">
+            <img src="elemental-composition-human-body.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="card green-card">
+        <h2><i class="fas fa-flask"></i> ජීවී දේහයක අඩංගු සංයෝග</h2>
+        <p>ජීවී දේහය නිර්මාණය වී ඇති රසායනික සංයෝග ප්‍රධාන වශයෙන් කාණ්ඩ දෙකකට බෙදිය හැකිය.</p>
+        
+        <span class="section-header"><i class="fas fa-leaf"></i> කාබනික සංයෝග :</span>
+        <ul class="content-list">
+            <li>කාබන් මූලද්‍රව්‍යය අඩංගු සංයෝග කාබනික සංයෝග ලෙස හැඳින්වේ.</li>
+            <li>කාබනික සංයෝග වර්ග: <strong>කාබොහයිඩ්රේට, ප්‍රෝටීන්, ලිපිඩ, නියුක්ලෙයික් අම්ල</strong> සහ <strong>විටමින්</strong>.</li>
+        </ul>
+
+        <span class="section-header"><i class="fas fa-vial"></i> අකාබනික සංයෝග :</span>
+        <ul class="content-list">
+            <li>කාබන් අඩංගු නොවන සංයෝග, අකාබනික සංයෝග වේ (උදා: ජලය, ඛනිජ ලවණ).</li>
+            <li><strong>විශේෂත්වය:</strong> කාබන් අඩංගු වුවද පහත ඒවා අකාබනික සංයෝග ලෙස සැලකේ.
+                <ul style="list-style-type: circle; padding-left: 20px; margin-top: 5px;">
+                    <li>කාබන්ඩයොක්සයිඩ් (CO<sub>2</sub>)</li>
+                    <li>කාබන්මොනොක්සයිඩ් (CO)</li>
+                    <li>කාබනේට (CO<sub>3</sub><sup>2-</sup>) </li>
+                    <li>බයිකාබනේට (HCO<sub>3</sub><sup>-</sup>)</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card yellow-card">
+        <h2><i class="fas fa-atom"></i> 1. කාබොහයිඩ්රේට</h2>
+        <ul class="content-list">
+            <li>කාබොහයිඩ්රේට යනු පෘථිවිය මතුපිට ඇති වඩාත් ම සුලබ කාබනික සංයෝගයයි.</li>
+            <li>ශාක වල සිදුවන ප්‍රභාසංස්ලේෂණ ක්‍රියාවලිය මගින් කාබොහයිඩ්රේට නිපදවේ.</li>
+            <li>නිදසුන්: අල, බතල, ධාන්‍ය, සීනි, පිටි </li>
+        </ul>
+
+        <span class="section-header"><i class="fas fa-atom"></i>  මූලද්‍රව්‍ය සංයුතිය:</span>
+        <ul class="content-list">
+            <li>කාබොහයිඩ්රේටවල ප්‍රධාන මූලද්‍රව්‍ය වන්නේ <strong>කාබන් (C), හයිඩ්‍රජන් (H) </strong> හා <strong>ඔක්සිජන් (O) </strong>ය.</li>
+            <li>මෙහි හයිඩ්‍රජන් හා ඔක්සිජන් යන මූලද්‍රව්‍ය පරමාණු සංයෝජනය වන්නේ <b>2 : 1</b> අනුපාතයෙනි.</li>
+            <li>කාබොහයිඩ්රේට සඳහා පොදු අණුක සූත්‍රය <b>C<sub>x</sub>(H<sub>2</sub>O)<sub>y</sub></b> ලෙස ලියනු ලැබේ.</li>
+        </ul>
+
+       
+        <span class="section-header"><i class="fas fa-info-circle"></i>  උදාහරණ මගින් පැහැදිලි කිරීම:</span>
+        <ul class="content-list">
+            <li><strong>ග්ලූකෝස් (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>):</strong> මෙහි හයිඩ්‍රජන් 12 කට ඔක්සිජන් 6 ක් ඇත. (12:6 යනු 2:1 කි)</li>
+            <li><strong>සුක්රෝස්  (C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>):</strong> මෙහි හයිඩ්‍රජන් 22 කට ඔක්සිජන් 11 ක් ඇත. (22:11 යනු 2:1 කි)</li>
+        </ul>
+
+        <span class="section-header"><i class="fas fa-exclamation-circle"></i>  විශේෂ කරුණු:</span>
+        <ul class="content-list">
+            <li>ලිපිඩවල ද C, H, O අඩංගු වුවද, එහි හයිඩ්‍රජන් හා ඔක්සිජන් අතර 2:1 අනුපාතය දක්නට නැත.</li>
+            <li>ලිපිඩවල ඔක්සිජන් ප්‍රතිශතය කාබොහයිඩ්රේටවලට වඩා අඩු අගයක් ගනී.</li>
+        </ul>
+
+        <div style="margin-top: 15px; padding: 10px; background: rgba(173, 216, 230, 0.1); border-left: 4px solid #add8e6; border-radius: 4px;">
+            <i class="fas fa-lightbulb" style="color: #ffca28;"></i> <b>විභාග උපදෙස්:</b> බොහෝ විට කාබොහයිඩ්රේට හඳුනා ගැනීමට ඇති ප්‍රධානතම ලක්ෂණය වන්නේ මෙම 2:1 අනුපාතයයි.
+        </div>
+        
+        <div class="formula">පොදු අණුක සූත්‍රය: C<sub>x</sub>(H<sub>2</sub>O)<sub>y</sub></div>
+        <br><br>
+
+    </div>
+     <div class="card pink-card">
+
+        <span class="section-header"><i class="fas fa-vial"></i> කාබොහයිඩ්රේට සංයෝග සැදී ඇති ආකාරය අනුව ඒවා ප්‍රධාන කොටස් තුනකට වර්ග කළ හැකිය.</span>
+        <ul class="content-list">
+            <li><strong>මොනොසැකරයිඩ (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>)</strong> 
+                <ul style="list-style-type: circle; padding-left: 20px; margin-top: 5px;">
+                    <li>ග්ලූකෝස්</li>
+                    <li>පෘක්‌ටෝස්</li>
+                    <li>ගැලැක්ටෝස්</li>
+                </ul>
+            </li>
+
+            <li><strong>ඩයිසැකරයිඩ (C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>)</strong> 
+                <ul style="list-style-type: circle; padding-left: 20px; margin-top: 5px;">
+                    <li>මෝල්ටෝස්</li>
+                    <li>සුක්රෝස් </li>
+                    <li>ලැක්ටෝස්</li>
+                </ul>
+            </li>
+
+            <li><strong>පොලිසැකරයිඩ (C<sub>6</sub>H<sub>10</sub>O<sub>5</sub>)<sub>n</sub></strong> 
+                <ul style="list-style-type: circle; padding-left: 20px; margin-top: 5px;">
+                    <li>පිෂ්ටය</li>
+                    <li>සෙලියුලෝස්</li>
+                    <li>ග්ලයිකොජන්</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+ </div>
+
+
+
+</div>
+
+ <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="analytics.js"></script>
+
+
+</body>
+</html>
