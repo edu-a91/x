@@ -35,7 +35,6 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
     :root {
         --bg-primary: #ffffff;
@@ -535,7 +534,13 @@
                     <h1>Contact <span>Us</span></h1>
                 </div>
                 <div class="contact-grid">
-                   
+                    <div class="contact-info-card">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p>+94 70 776 3739</p>
+                        </div>
+                    </div>
                     <div class="contact-info-card email-card">
                         <i class="fa-regular fa-envelope"></i>
                         <div>
@@ -545,7 +550,32 @@
                     </div>
                 </div>
             </div>
-           
+            <div class="contact-card">
+                <div class="contact-header" style="margin-bottom: 2rem; padding-bottom: 1.5rem;">
+                    <h1 style="font-size: 2rem;">Send a <span>Message</span></h1>
+                </div>
+                <div class="form-container">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name / නම</label>
+                            <input type="text" id="name" name="name" class="form-control" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email / විද්‍යුත් තැපෑල</label>
+                            <input type="text" id="email" name="email" class="form-control" placeholder="name@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp">WhatsApp Number / දුරකථන අංකය</label>
+                            <input type="text" id="whatsapp" name="whatsapp" class="form-control" placeholder="070 776 3739">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message / පණිවිඩය</label>
+                            <textarea id="message" name="message" class="form-control" required placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit" id="submitBtn" class="btn-submit">Send Message / පණිවිඩය යවන්න</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
     <footer>
@@ -571,8 +601,8 @@
             });
         });
         
-        // Initialize Supabase Client
-        const _sb = supabase.createClient('https://pelbzkhuxsvmldfqzlkx.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlbGJ6a2h1eHN2bWxkZnF6bGt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE5MjI3NzgsImV4cCI6MjA5NzQ5ODc3OH0.BQ_k-PABq9E52eTRiQ0hqkhRVVA_U_bShTBEofB5lY4');
+        // Google Apps Script Web App URL
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxBOE4Qvbp8N7rSpOj0pnH8wsFQVwnXH0391n2bJfN7qEtBbnsGP6NJEUGC3Iru867Slg/exec';
         
         document.getElementById('contactForm').addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -586,19 +616,19 @@
             const emailVal = document.getElementById('email').value.trim();
             const whatsappVal = document.getElementById('whatsapp').value.trim();
             
-            const formData = {
-                name: document.getElementById('name').value.trim(),
-                email: emailVal === "" ? "Not Provided" : emailVal,
-                whatsapp: whatsappVal === "" ? "Not Provided" : whatsappVal,
-                message: document.getElementById('message').value.trim()
-            };
+            const formData = new FormData();
+            formData.append('name', document.getElementById('name').value.trim());
+            formData.append('email', emailVal === "" ? "Not Provided" : emailVal);
+            formData.append('whatsapp', whatsappVal === "" ? "Not Provided" : whatsappVal);
+            formData.append('message', document.getElementById('message').value.trim());
             
             try {
-                const { data, error } = await _sb
-                    .from('contact_submissions')
-                    .insert([formData]);
+                const response = await fetch(scriptURL, { 
+                    method: 'POST', 
+                    body: formData 
+                });
                 
-                if (error) throw error;
+                if (!response.ok) throw new Error('Network response was not ok');
                 
                 alert('Message sent successfully! / පණිවිඩය සාර්ථකව යවන ලදී!');
                 document.getElementById('contactForm').reset();
