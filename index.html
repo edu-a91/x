@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags -->
+    <title>ASW Education | A/L Physics | උසස් පෙළ භෞතික විද්‍යාව</title>
+    <meta name="description" content="Free learning resources for Sri Lankan A/L science students, including A/L Physics lessons, notes, revision materials, past papers, and quizzes.">
+    <meta name="keywords" content="ASW Education, A/L Physics Sri Lanka, Advanced Level Physics Sinhala, Physics Notes, Sri Lanka Education">
+    <meta name="author" content="ASW Education">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="language" content="Sinhala">
+    <meta name="revisit-after" content="7 days">
+    <link rel="canonical" href="https://www.asweducation.online/">
+    <link rel="icon" type="image/png" href="https://asweducation.online/logo.png">
+        
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ASW Education | A/L Physics | උසස් පෙළ භෞතික විද්‍යාව">
+    <meta property="og:description" content="Free learning resources for Sri Lankan A/L science students, including A/L Physics lessons, notes, revision materials, past papers, and quizzes.">
+    <meta property="og:image" content="https://asweducation.online/logo.png">
+    <meta property="og:url" content="https://www.asweducation.online/">
+    <meta property="og:site_name" content="ASW Education">
+    <meta property="og:locale" content="si_LK">
+        
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ASW Education | A/L Physics | උසස් පෙළ භෞතික විද්‍යාව">
+    <meta name="twitter:description" content="Free learning resources for Sri Lankan A/L science students, including A/L Physics lessons, notes, revision materials, past papers, and quizzes.">
+    <meta name="twitter:image" content="https://asweducation.online/logo.png">
+        
+    <!-- Performance / Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PBFX03LKPD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-PBFX03LKPD');
+    </script>
+        
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://www.asweducation.online/#website",
+          "name": "ASW Education",
+          "url": "https://www.asweducation.online/",
+          "description": "Free learning resources for Sri Lankan A/L science students, including A/L Physics lessons, notes, revision materials, past papers, and quizzes."
+        },
+        {
+          "@type": "EducationalOrganization",
+          "@id": "https://www.asweducation.online/#organization",
+          "name": "ASW Education",
+          "url": "https://www.asweducation.online/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://asweducation.online/logo.png"
+          },
+          "description": "Free learning resources for Sri Lankan A/L science students, including A/L Physics lessons, notes, revision materials, past papers, and quizzes.",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Sri Lanka"
+          },
+          "knowsAbout": [
+            "G.C.E. A/L Physics"
+          ]
+        }
+      ]
+    }
+    </script>
+        
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        
+    <style>
+        /* Base Reset & Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Quicksand', 'Noto Sans Sinhala', sans-serif;
+            background-color: #fffaf5;
+            color: #1e293b;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        /* Utility / Shape Classes */
+        .squircle {
+            border-radius: 2.5rem;
+        }
+        /* Solid Pastel Colors with Vibrant Accents */
+        .bg-pastel-sky { background-color: #e0f2fe; border-color: #7dd3fc; }
+        .bg-pastel-peach { background-color: #ffedd5; border-color: #fed7aa; }
+        .bg-pastel-blush { background-color: #fce7f3; border-color: #fbcfe8; }
+        .bg-pastel-periwinkle { background-color: #e0e7ff; border-color: #c7d2fe; }
+        .bg-pastel-lime { background-color: #ecfccb; border-color: #bef264; }
+        .bg-pastel-rose { background-color: #ffe4e6; border-color: #fecdd3; }
+        .bg-pastel-aqua { background-color: #cffafe; border-color: #a5f3fc; }
+        .bg-pastel-coral { background-color: #ffedd5; border-color: #ffdab9; }
+
+        /* Grade & Feature Cards Style & Borders */
+        .grades-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+        .grade-card {
+            border-width: 3px;
+            border-style: solid;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 2.5rem;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        /* Interactive Animations */
+        .hover-bounce:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.12);
+        }
+        /* Daily Quiz Card Theme */
+        .quiz-card {
+            border: 3px solid #34d399;
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            cursor: pointer;
+            padding: 3rem 2.5rem;
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+            box-shadow: 0 15px 30px -5px rgba(52, 211, 153, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .quiz-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            transition: all 0.3s ease;
+            box-shadow: 0 25px 40px -10px rgba(52, 211, 153, 0.5);
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+        }
+        .quiz-emoji-badge {
+            width: 6rem;
+            height: 6rem;
+            min-width: 6rem;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border: 3px solid #a7f3d0;
+            animation: bouncePulse 2.2s ease-in-out infinite;
+        }
+        @keyframes bouncePulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.08) rotate(-4deg); }
+        }
+        .quiz-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #065f46;
+            margin-bottom: 0.3rem;
+        }
+        .quiz-subtitle {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #047857;
+            font-family: 'Noto Sans Sinhala', sans-serif;
+            margin-bottom: 0.75rem;
+        }
+        .quiz-desc {
+            font-size: 0.98rem;
+            color: #065f46;
+            font-weight: 600;
+        }
+        .quiz-btn {
+            display: inline-block;
+            margin-top: 0.75rem;
+            background: #10b981;
+            color: white;
+            font-weight: 700;
+            padding: 0.75rem 1.75rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            box-shadow: 0 8px 18px rgba(16, 185, 129, 0.35);
+            transition: all 0.25s ease;
+        }
+        .quiz-btn:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+        /* Parallax / Fixed Image Section with Scroll Underline & Model Paper Text */
+        .parallax-section {
+            position: relative;
+            background-image: url('asw-education-al-physics-resources.webp');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 6rem 1.5rem;
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+        .parallax-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.75);
+            pointer-events: none;
+        }
+        .parallax-content {
+            position: relative;
+            z-index: 2;
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+        .parallax-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: #fef08a;
+        }
+        .parallax-subtitle {
+            font-size: 1.25rem;
+            font-weight: 700;
+            font-family: 'Noto Sans Sinhala', sans-serif;
+            margin-bottom: 1.25rem;
+            color: #fef9c3;
+        }
+        .parallax-desc {
+            font-size: 1.05rem;
+            font-weight: 600;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            color: #e2e8f0;
+        }
+        /* Scroll Animated Underline Effect */
+        .scroll-underline-heading {
+            display: inline-block;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        .scroll-underline-heading::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 4px;
+            bottom: 0;
+            left: 50%;
+            background-color: #fef08a;
+            transition: width 0.4s ease, left 0.4s ease;
+            transform: translateX(-50%);
+            border-radius: 2rem;
+        }
+        .scroll-underline-heading.active::after {
+            width: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .parallax-btn {
+            display: inline-block;
+            background: #eab308;
+            color: #1e293b;
+            font-weight: 700;
+            padding: 0.75rem 2rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            box-shadow: 0 8px 18px rgba(234, 179, 8, 0.4);
+            transition: all 0.25s ease;
+        }
+        .parallax-btn:hover {
+            background: #ca8a04;
+            color: white;
+            transform: translateY(-2px);
+        }
+        /* Container & Spacing Layouts */
+        .container {
+            max-width: 72rem;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        /* Full Hero Section with Cover Image Background & Responsive Breakpoints */
+        .hero-section {
+            width: 100%;
+            height: 100vh;
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('asw-education-al-physics-resources-mobile.webp');
+        }
+        @media (min-width: 768px) and (max-width: 1032px) {
+            .hero-section {
+                background-image: url('asw-education-al-physics-resources-tablet.webp');
+            }
+        }
+        /* Desktop Background Image */
+        @media (min-width: 1033px) {
+            .hero-section {
+                background-image: url('asw-education-al-physics-resources.webp');
+            }
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            pointer-events: none;
+        }
+        /* Welcome Intro Section Styles */
+        .intro-section {
+            padding: 6rem 1.5rem 5rem 1.5rem;
+            text-align: center;
+            background: linear-gradient(180deg, #fffaf5 0%, #fff1f2 100%);
+            border-bottom: 2px solid #fbcfe8;
+            position: relative;
+            overflow: hidden;
+        }
+        .blob-bg {
+            position: absolute;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.5;
+            filter: blur(8px);
+        }
+        .blob-1 {
+            width: 20rem;
+            height: 20rem;
+            top: -10%;
+            left: -10%;
+            animation: moveBlobOne 10s infinite ease-in-out alternate;
+        }
+        .blob-2 {
+            width: 22rem;
+            height: 22rem;
+            bottom: -15%;
+            right: -10%;
+            animation: moveBlobTwo 12s infinite ease-in-out alternate;
+        }
+        .blob {
+            border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+        }
+        @keyframes moveBlobOne {
+            0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+            100% { transform: translate(50px, 30px) rotate(45deg) scale(1.1); }
+        }
+        @keyframes moveBlobTwo {
+            0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+            100% { transform: translate(-60px, -40px) rotate(-45deg) scale(1.15); }
+        }
+        .intro-ball {
+            position: absolute;
+            z-index: 2;
+            pointer-events: none;
+            opacity: 0.9;
+        }
+        .intro-ball-1 {
+            width: 14rem;
+            height: 14rem;
+            background-color: #ffedd5;
+            top: 5%;
+            left: 5%;
+            border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+            animation: moveBallOne 7s infinite ease-in-out alternate;
+        }
+        .intro-ball-2 {
+            width: 16rem;
+            height: 16rem;
+            background-color: #e0f2fe;
+            bottom: 5%;
+            right: 5%;
+            border-radius: 58% 42% 30% 70% / 55% 55% 45% 45%;
+            animation: moveBallTwo 8s infinite ease-in-out alternate;
+        }
+        .intro-ball-center {
+            width: 13rem;
+            height: 13rem;
+            background-color: #fce7f3;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 65% 35% 55% 45% / 30% 60% 40% 70%;
+            animation: moveBallCenter 9s infinite ease-in-out alternate;
+        }
+        @keyframes moveBallOne {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            100% { transform: translate(80px, 50px) scale(1.15) rotate(25deg); }
+        }
+        @keyframes moveBallTwo {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            100% { transform: translate(-90px, -40px) scale(1.2) rotate(-30deg); }
+        }
+        @keyframes moveBallCenter {
+            0% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+            100% { transform: translate(calc(-50% + 40px), calc(-50% - 30px)) scale(1.12) rotate(40deg); }
+        }
+        .intro-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+            position: relative;
+            z-index: 3;
+        }
+        .intro-title span {
+            color: #0284c7;
+        }
+        .intro-desc-sinhala {
+            font-size: 1.05rem;
+            color: #475569;
+            font-family: 'Noto Sans Sinhala', sans-serif;
+            max-width: 48rem;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-weight: 600;
+            position: relative;
+            z-index: 3;
+        }
+        .grades-section {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+        h2 {
+            font-size: 1.45rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+        /* Cute Styling for Main Section Heading */
+        .main-section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 3.5rem;
+            color: #0284c7;
+            letter-spacing: -0.5px;
+            position: relative;
+        }
+        .main-section-title span {
+            color: #f43f5e;
+        }
+        .main-section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #38bdf8;
+            margin: 0.75rem auto 0 auto;
+            border-radius: 2rem;
+        }
+        .floating-badge {
+            position: absolute;
+            bottom: 2rem;
+            right: 1.5rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            padding: 1rem 1.3rem;
+            border-radius: 1.4rem;
+            box-shadow: 0 18px 30px -5px rgba(254, 215, 170, 0.6);
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            border: 2px solid #fff7ed;
+            animation: floatBadge 3.5s ease-in-out infinite;
+            z-index: 2;
+        }
+
+        /* Card Elements */
+        .card-icon {
+            width: 4rem;
+            height: 4rem;
+            background: white;
+            border-radius: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            border: 2px solid rgba(0,0,0,0.03);
+        }
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+            color: #0f172a;
+        }
+        .card-subtitle {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #475569;
+            margin-bottom: 0.85rem;
+            font-family: 'Noto Sans Sinhala', sans-serif;
+        }
+        /* Study Plan & Countdown Card Theme (Centered Content) */
+        .studyplan-card {
+            border: 3px solid #38bdf8;
+            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+            cursor: pointer;
+            padding: 3rem 2.5rem;
+            margin-top: 2rem;
+            margin-bottom: 4rem;
+            box-shadow: 0 15px 30px -5px rgba(56, 189, 248, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1.5rem;
+        }
+        .studyplan-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            transition: all 0.3s ease;
+            box-shadow: 0 25px 40px -10px rgba(56, 189, 248, 0.5);
+            background: linear-gradient(135deg, #bae6fd 100%, #7dd3fc 100%);
+        }
+        .studyplan-emoji-badge {
+            width: 6rem;
+            height: 6rem;
+            min-width: 6rem;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border: 3px solid #7dd3fc;
+            animation: bouncePulse 2.2s ease-in-out infinite;
+        }
+        .studyplan-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #0369a1;
+            margin-bottom: 0.3rem;
+        }
+        .studyplan-subtitle {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0284c7;
+            font-family: 'Noto Sans Sinhala', sans-serif;
+            margin-bottom: 0.75rem;
+        }
+        .studyplan-desc {
+            font-size: 0.98rem;
+            color: #0369a1;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            max-width: 42rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .studyplan-btn {
+            display: inline-block;
+            margin-top: 0.75rem;
+            background: #0284c7;
+            color: white;
+            font-weight: 700;
+            padding: 0.75rem 1.75rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            box-shadow: 0 8px 18px rgba(2, 132, 199, 0.35);
+            transition: all 0.25s ease;
+        }
+        .studyplan-btn:hover {
+            background: #0369a1;
+            transform: translateY(-2px);
+        }
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem auto;
+            flex-wrap: wrap;
+        }
+        .countdown-box {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 2px solid #7dd3fc;
+            min-width: 4.5rem;
+        }
+        .countdown-number {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #0369a1;
+            display: block;
+        }
+        .countdown-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+        /* Footer Styles */
+        footer {
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding: 4rem 1.25rem 2.5rem 1.25rem;
+            position: relative;
+            overflow: hidden;
+            border-top-left-radius: 2.5rem;
+            border-top-right-radius: 2.5rem;
+            box-shadow: 0 -20px 40px rgba(15, 23, 42, 0.15);
+            text-align: left;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 10;
+        }
+        .footer-col h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #38bdf8;
+            margin-bottom: 1.25rem;
+            letter-spacing: 0.5px;
+        }
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+        .footer-links a {
+            text-decoration: none;
+            color: #94a3b8;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.2s ease;
+        }
+        .footer-links a:hover {
+            color: #f43f5e;
+            transform: translateX(4px);
+        }
+        .footer-subscribe-desc {
+            color: #94a3b8;
+            font-size: 1.05rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.6;
+            font-family: 'Noto Sans Sinhala', sans-serif;
+        }
+        .footer-brand-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        .social-icon-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        .social-icon-btn svg {
+            width: 1.3rem;
+            height: 1.3rem;
+            fill: currentColor;
+            transition: transform 0.35s;
+            z-index: 2;
+        }
+        .social-icon-btn.youtube {
+            background-color: #ff0000;
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .social-icon-btn.facebook {
+            background-color: #1877f2;
+            box-shadow: 0 8px 20px rgba(24, 119, 242, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .social-icon-btn:hover {
+            transform: translateY(-4px) scale(1.08);
+        }
+                
+        .footer-bottom {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: #94a3b8;
+            font-size: 0.95rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+                
+        .developer-credit {
+            font-size: 9px;
+            letter-spacing: 0.15em;
+            color: rgba(255,255,255,0.3);
+            text-align: center;
+            width: 100%;
+            word-break: break-word;
+            padding: 0 0.5rem;
+        }
+
+        /* Back to Top Button Fixed Styles */
+        #backToTopBtn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 99;
+            background-color: #0284c7;
+            color: white;
+            border: none;
+            outline: none;
+            width: 3.2rem;
+            height: 3.2rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.35);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        #backToTopBtn.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #backToTopBtn:hover {
+            background-color: #0369a1;
+            transform: translateY(-4px) scale(1.08);
+            box-shadow: 0 15px 30px rgba(2, 132, 199, 0.45);
+        }
+
+        /* Media Queries */
+        @media (max-width: 360px) {
+            .container {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+            .intro-title {
+                font-size: 1.6rem;
+            }
+            .intro-desc-sinhala {
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+            .main-section-title {
+                font-size: 1.45rem;
+                margin-top: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            h2 {
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+            }
+            .grade-card {
+                padding: 1.25rem 0.85rem;
+            }
+            .card-title {
+                font-size: 1rem;
+            }
+            .card-subtitle {
+                font-size: 0.85rem;
+            }
+            .quiz-card, .studyplan-card {
+                padding: 2rem 1rem;
+                flex-direction: column;
+                text-align: center;
+            }
+            .floating-badge {
+                padding: 0.6rem 0.8rem;
+                bottom: 0.75rem;
+                right: 0.5rem;
+                max-width: calc(100% - 1rem);
+            }
+            .floating-badge div p:first-child {
+                font-size: 0.75rem !important;
+            }
+            .floating-badge div p:last-child {
+                font-size: 0.65rem !important;
+            }
+            #backToTopBtn {
+                width: 2.4rem;
+                height: 2.4rem;
+                bottom: 0.75rem;
+                right: 0.75rem;
+                font-size: 0.75rem;
+            }
+            .footer-col h4 {
+                font-size: 1rem;
+            }
+            .footer-links a, .footer-subscribe-desc, .footer-bottom {
+                font-size: 0.82rem;
+            }
+            .social-icon-btn {
+                width: 2.3rem;
+                height: 2.3rem;
+            }
+            .developer-credit {
+                font-size: 7.5px;
+                letter-spacing: 0.08em;
+            }
+            .parallax-title {
+                font-size: 1.6rem;
+            }
+            .parallax-subtitle {
+                font-size: 1rem;
+            }
+            .parallax-desc {
+                font-size: 0.85rem;
+            }
+            .studyplan-title {
+                font-size: 1.2rem;
+            }
+            .studyplan-subtitle {
+                font-size: 0.85rem;
+            }
+            .studyplan-desc {
+                font-size: 0.85rem;
+            }
+            .quiz-title {
+                font-size: 1.2rem;
+            }
+            .quiz-subtitle {
+                font-size: 0.85rem;
+            }
+            .quiz-desc {
+                font-size: 0.85rem;
+            }
+            .countdown-box {
+                min-width: 3.6rem;
+                padding: 0.3rem 0.5rem;
+            }
+            .countdown-number {
+                font-size: 1.1rem;
+            }
+            .countdown-label {
+                font-size: 0.65rem;
+            }
+        }
+        @media (min-width: 768px) {
+            .grades-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+            }
+            h2 {
+                font-size: 2.25rem;
+            }
+            .intro-title {
+                font-size: 3rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            footer {
+                border-top-left-radius: 3rem;
+                border-top-right-radius: 3rem;
+                padding: 5rem 1.5rem 3rem 1.5rem;
+            }
+        }
+        @keyframes floatBadge {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* =========================================================
+           NAVBAR (added)
+           ========================================================= */
+        :root {
+            --nav-primary: #0f172a;
+            --nav-accent: #38bdf8;
+            --nav-white: #FFFFFF;
+            --nav-transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --nav-shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --nav-shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: transparent;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            transition: var(--nav-transition);
+        }
+
+        header.scrolled {
+            background: var(--nav-white);
+            border-bottom: 1px solid rgba(2, 132, 199, 0.12);
+            box-shadow: var(--nav-shadow-subtle);
+        }
+
+        header a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header ul {
+            list-style: none;
+        }
+
+        header:not(.scrolled) .logo,
+        header:not(.scrolled) .nav-links a {
+            color: var(--nav-white);
+        }
+
+        header.scrolled .logo,
+        header.scrolled .nav-links a {
+            color: var(--nav-primary);
+        }
+
+        header .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        @media (min-width: 768px) {
+            header .nav-container { height: 90px; }
+        }
+
+        header .logo {
+            font-family: 'Quicksand', 'Noto Sans Sinhala', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: var(--nav-transition);
+            white-space: nowrap;
+        }
+
+        @media (min-width: 360px) {
+            header .logo { font-size: 1.35rem; }
+        }
+
+        @media (min-width: 768px) {
+            header .logo {
+                font-size: 1.8rem;
+                letter-spacing: 2px;
+            }
+        }
+
+        header .logo span {
+            color: var(--nav-accent);
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: var(--nav-transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--nav-accent);
+            border-radius: 2rem;
+            transition: var(--nav-transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            color: var(--nav-white);
+            transition: var(--nav-transition);
+            padding: 5px;
+        }
+
+        header.scrolled .menu-toggle {
+            color: var(--nav-primary);
+        }
+
+        /* --- MOBILE NAVIGATION OVERLAY (SMOOTH TRANSITION) --- */
+        @media (max-width: 991px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--nav-white);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1.5rem;
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transform: translateY(-10px);
+                transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                box-shadow: var(--nav-shadow-hover);
+            }
+
+            .nav-links.active {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                transform: translateY(0);
+            }
+
+            .nav-links.active a {
+                color: var(--nav-primary) !important;
+                font-size: 1rem;
+                opacity: 0;
+                transform: translateY(15px);
+                animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            }
+
+            .nav-links.active li:nth-child(1) a { animation-delay: 0.05s; }
+            .nav-links.active li:nth-child(2) a { animation-delay: 0.1s; }
+            .nav-links.active li:nth-child(3) a { animation-delay: 0.15s; }
+            .nav-links.active li:nth-child(4) a { animation-delay: 0.2s; }
+            .nav-links.active li:nth-child(5) a { animation-delay: 0.25s; }
+
+            .menu-toggle {
+                display: block;
+            }
+            
+            .menu-toggle i {
+                transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+        }
+
+        @media (max-width: 991px) and (min-width: 768px) {
+            .nav-links {
+                top: 90px;
+                height: calc(100vh - 90px);
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION (added) -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#home" class="logo">ASW <span>Education</span></a>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#grades">Study Plan</a></li>
+                    <li><a href="#modelPaperSection">Model Papers</a></li>
+                    <li><a href="#dailyQuiz">Daily Quiz</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <div class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Full Hero Section with Cover Image Background -->
+        <section class="hero-section" id="home">
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="floating-badge">
+                <div style="font-size: 1.4rem;" aria-hidden="true">⭐</div>
+                <div>
+                   <p style="font-weight: bold; font-size: 0.85rem; color: #0f172a;">Achini Wanasinghe</p>
+                    <p style="font-size: 0.75rem; color: #64748b;">(MBBS) University of Sri Jayewardenepura</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Welcome Intro Section with Blob and Moving Sharp-Border Color Balls Animation -->
+        <section class="intro-section">
+            <div class="blob-bg blob-1 bg-pastel-peach blob" aria-hidden="true"></div>
+            <div class="blob-bg blob-2 bg-pastel-sky blob" aria-hidden="true"></div>
+
+            <div class="intro-ball intro-ball-1" aria-hidden="true"></div>
+            <div class="intro-ball intro-ball-center" aria-hidden="true"></div>
+            <div class="intro-ball intro-ball-2" aria-hidden="true"></div>
+
+            <div class="container">
+                <h1 class="intro-title">ASW <span>Education</span></h1>
+                <br><br>
+                <p class="intro-desc-sinhala">උසස් පෙළ භෞතික විද්‍යාව ඉගෙනගැනීමට අප හා එක්වන්න.</p>
+            </div>
+        </section>
+
+        <section class="grades-section" id="grades">
+            <div class="container">
+                <!-- 2027 A/L Exam Study Plan & Countdown Section Placed Above Learning Resources -->
+                <h2 class="main-section-title">Exam <span>Preparation</span></h2>
+
+                <a href="#" class="card-link">
+                    <div class="studyplan-card squircle hover-bounce">
+                        <div class="studyplan-emoji-badge" aria-hidden="true">⏳</div>
+                        <div>
+                            <h3 class="studyplan-title">2027 A/L Exam Countdown & Study Plan</h3>
+                            <h4 class="studyplan-subtitle">2027 උසස් පෙළ විභාග සූදානම සහ අධ්‍යයන සැලැස්ම</h4>
+                            <p class="studyplan-desc">2027 උසස් පෙළ විභාගයට නියමිත දින වකවානු සහ ප්‍රවේශ විය හැකි විශේෂ අධ්‍යයන සැලැස්ම මෙතැනින් ලබා ගන්න!</p>
+                            
+                            <!-- Countdown Timer Display -->
+                            <div class="countdown-container" id="alCountdown">
+                                <div class="countdown-box">
+                                    <span class="countdown-number" id="days">00</span>
+                                    <span class="countdown-label">Days</span>
+                                </div>
+                                <div class="countdown-box">
+                                    <span class="countdown-number" id="hours">00</span>
+                                    <span class="countdown-label">Hours</span>
+                                </div>
+                                <div class="countdown-box">
+                                    <span class="countdown-number" id="minutes">00</span>
+                                    <span class="countdown-label">Mins</span>
+                                </div>
+                                <div class="countdown-box">
+                                    <span class="countdown-number" id="seconds">00</span>
+                                    <span class="countdown-label">Secs</span>
+                                </div>
+                            </div>
+
+                            <span class="studyplan-btn">View Study Plan 📚</span>
+                        </div>
+                    </div>
+                </a>
+                <br><br>
+
+                <h2 class="main-section-title">Learning <span>Resources</span></h2>
+                <h2 style="margin-top: 4rem;">A/L Physics</h2>
+                <div class="grades-grid">
+                    <!-- Mechanics Card -->
+                    <a href="#" class="card-link">
+                        <div class="bg-pastel-blush squircle hover-bounce grade-card">
+                            <div class="card-icon" aria-hidden="true">⚙️</div>
+                            <h3 class="card-title">Mechanics</h3>
+                            <h4 class="card-subtitle">යාන්ත්‍ර විද්‍යාව</h4>
+                        </div>
+                    </a>
+
+                    <!-- Fields & Waves Card -->
+                    <a href="#" class="card-link">
+                        <div class="bg-pastel-sky squircle hover-bounce grade-card">
+                            <div class="card-icon" aria-hidden="true">⚡</div>
+                            <h3 class="card-title">Fields & Waves</h3>
+                            <h4 class="card-subtitle">ක්ෂේත්‍ර හා තරංග</h4>
+                        </div>
+                    </a>
+
+                    <!-- Past Papers & Notes Card -->
+                    <a href="#" class="card-link">
+                        <div class="bg-pastel-peach squircle hover-bounce grade-card">
+                            <div class="card-icon" aria-hidden="true">📄</div>
+                            <h3 class="card-title">Model & Past Papers</h3>
+                            <h4 class="card-subtitle">ප්‍රශ්න පත්‍ර සහ සටහන්</h4>
+                        </div>
+                    </a>
+                </div>
+                <br><br>
+
+                <!-- Fixed Background Image Section with Scroll Underline & Model Paper Text -->
+                <section class="parallax-section squircle" id="modelPaperSection">
+                    <div class="parallax-overlay" aria-hidden="true"></div>
+                    <div class="parallax-content">
+                        <h3 class="parallax-title">
+                            <span class="scroll-underline-heading" id="scrollHeading">Weekly Model Papers</span>
+                        </h3>
+                        <h4 class="parallax-subtitle">සතිපතා ආදර්ශ ප්‍රශ්න පත්‍ර</h4>
+                        <p class="parallax-desc">භෞතික විද්‍යාව විෂය නිර්දේශය ආවරණය වන පරිදි සතිපතා ආදර්ශ ප්‍රශ්න පත්‍ර</p>
+                        <a href="#" class="parallax-btn">View</a>
+                    </div>
+                </section>
+
+                <!-- Daily Quiz Card Section Added -->
+                <h2 class="main-section-title" id="dailyQuiz" >Daily <span>Practice</span></h2>
+                <a href="#" class="card-link">
+                    <div class="quiz-card squircle hover-bounce">
+                        <div class="quiz-emoji-badge" aria-hidden="true">🧠</div>
+                        <div>
+                            <h3 class="quiz-title">Daily Quiz</h3>
+                            <h4 class="quiz-subtitle">දෛනික ප්‍රශ්නාවලිය</h4>
+                            <p class="quiz-desc">දිනපතා ප්‍රශ්නවලට නිවැරදි පිළිතුරු ලබාදී, රු. 5000 ක්‌ වටිනා පාසල් උපකරණ දිනාගැනීමේ අවස්ථාව ලබා ගන්න!</p>
+                            <span class="quiz-btn">Play Today's Quiz 🎯</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="about">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand-box">
+                        <div class="logo" style="margin-bottom: 1rem; color: #38bdf8; font-weight: 700;">
+                            ASW Education
+                        </div>
+                        <p class="footer-subscribe-desc" style="margin-bottom: 1.25rem;">
+                            උසස් පෙළ භෞතික විද්‍යාව ඉගෙනගැනීමට අප හා එක්වන්න.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                       <li><a href="#">2027 Study Plan</a></li>
+                        <li><a href="#">Daily Quiz</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" target="_blank" rel="noopener" class="social-icon-btn youtube" aria-label="YouTube Channel">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 ASW Education. All rights reserved.</p>
+                <p class="developer-credit">
+                    DESIGNED & DEVELOPED BY ACHINI WANASINGHE
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTopBtn" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script>
+        const backToTopBtn = document.getElementById("backToTopBtn");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add("show");
+            } else {
+                backToTopBtn.classList.remove("show");
+            }
+
+            // Scroll underline trigger when section is in view
+            const section = document.getElementById("modelPaperSection");
+            const heading = document.getElementById("scrollHeading");
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= window.innerHeight * 0.75 && rect.bottom >= 0) {
+                heading.classList.add("active");
+            } else {
+                heading.classList.remove("active");
+            }
+        });
+
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+        // 2027 A/L Exam Countdown Timer Logic (Targeting August 3, 2027)
+        const examDate = new Date("August 3, 2027 08:30:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = examDate - now;
+
+            if (distance < 0) {
+                document.getElementById("alCountdown").innerHTML = "<span style='font-weight:700; color:#0369a1;'>Exam has started or completed!</span>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        /* =========================================================
+           NAVBAR SCRIPT (added)
+           ========================================================= */
+        // Sticky header effect
+        const header = document.getElementById('header');
+
+        function handleHeaderScroll() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+        window.addEventListener('scroll', handleHeaderScroll);
+        handleHeaderScroll();
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.style.transform = 'rotate(90deg)';
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Smooth scroll for internal anchor links & mobile menu auto-close
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    
+                    // Close mobile menu smoothly if open
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        const icon = menuToggle.querySelector('i');
+                        icon.style.transform = 'rotate(0deg)';
+                        icon.classList.remove('fa-xmark');
+                        icon.classList.add('fa-bars');
+                    }
+
+                    // Calculate offset for sticky header
+                    const headerHeight = header.offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
