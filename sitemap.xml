@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Homepage (Hourly Change Priority) -->
+    <url>
+        <loc>https://www.asweducation.online/</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>hourly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+  
+
+    <!-- Privacy Policy Page -->
+    <url>
+        <loc>https://www.asweducation.online/privacy.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <!-- Terms Page -->
+    <url>
+        <loc>https://www.asweducation.online/terms.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.3</priority>
+    </url>
+</urlset>
